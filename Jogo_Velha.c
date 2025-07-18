@@ -12,10 +12,10 @@ void interface(){
    inicio:
     while(partida == 1){
        int jogada;
-      printf("   0   1   2\n");
-      printf("0 [%c] [%c] [%c]\n",Corpo[0][0], Corpo[0][1], Corpo[0][2]);
-      printf("1 [%c] [%c] [%c]\n", Corpo[1][0], Corpo[1][1], Corpo[1][2]);
-      printf("2 [%c] [%c] [%c]\n", Corpo[2][0], Corpo[2][1], Corpo[2][2]);
+      printf("\n\x1b[35m<JOGO DA VELHA>\x1b[0m\n");
+      printf("| [%c] [%c] [%c] |\n",Corpo[0][0], Corpo[0][1], Corpo[0][2]);
+      printf("| [%c] [%c] [%c] |\n", Corpo[1][0], Corpo[1][1], Corpo[1][2]);
+      printf("| [%c] [%c] [%c] |\n", Corpo[2][0], Corpo[2][1], Corpo[2][2]);
       int vez=0;
          if(vez == 0){
             if (jogador == 'X'){
@@ -77,51 +77,51 @@ void interface(){
                 break;
                 default:
                    system("cls");
-                printf("Jogada fora do intervalo (1-9).\n");
-                vez = 0;
+                   printf("\033[1;33mJogada fora do intervalo (1-9).\033[0m\n");
+                vez = 1;
                 break;
         } for(int validador=0; validador<3; validador++ ){
       if (Corpo[validador][0] == jogador && Corpo[validador][1]==jogador && Corpo[validador][2]== jogador ){
-         printf("   0   1   2\n");
-         printf("0 [%c] [%c] [%c]\n",Corpo[0][0], Corpo[0][1], Corpo[0][2]);
-         printf("1 [%c] [%c] [%c]\n", Corpo[1][0], Corpo[1][1], Corpo[1][2]);
-          printf("2 [%c] [%c] [%c]\n", Corpo[2][0], Corpo[2][1], Corpo[2][2]);
-          printf("\x1b[1;32mvitoria do jogador: %c\x1b[0m\n", jogador);
+         printf("\n\x1b[35m<JOGO DA VELHA>\x1b[0m\n");
+         printf("| [%c] [%c] [%c] |\n",Corpo[0][0], Corpo[0][1], Corpo[0][2]);
+         printf("| [%c] [%c] [%c] |\n", Corpo[1][0], Corpo[1][1], Corpo[1][2]);
+         printf("| [%c] [%c] [%c] |\n", Corpo[2][0], Corpo[2][1], Corpo[2][2]);
+         printf("\x1b[1;32mvitoria do jogador: %c\x1b[0m\n", jogador);
          partida = 0;
          break;
       }  
             else
                if (Corpo[0][validador] == jogador && Corpo[1][validador]== jogador&& Corpo[2][validador] == jogador ){
-               printf("   0   1   2\n");
-               printf("0 [%c] [%c] [%c]\n",Corpo[0][0], Corpo[0][1], Corpo[0][2]);
-               printf("1 [%c] [%c] [%c]\n", Corpo[1][0], Corpo[1][1], Corpo[1][2]);
-               printf("2 [%c] [%c] [%c]\n", Corpo[2][0], Corpo[2][1], Corpo[2][2]);
+               printf("\n\x1b[35m<JOGO DA VELHA>\x1b[0m\n");
+               printf("| [%c] [%c] [%c] |\n",Corpo[0][0], Corpo[0][1], Corpo[0][2]);
+               printf("| [%c] [%c] [%c] |\n", Corpo[1][0], Corpo[1][1], Corpo[1][2]);
+               printf("| [%c] [%c] [%c] |\n", Corpo[2][0], Corpo[2][1], Corpo[2][2]);
                printf("\x1b[1;32mvitoria do jogador: %c\x1b[0m\n", jogador);
                partida = 0;
                break;
                }}
                   if (Corpo[0][0] == jogador && Corpo[1][1]== jogador && Corpo[2][2] == jogador ){
-                  printf("   0   1   2\n");
-                  printf("0 [%c] [%c] [%c]\n",Corpo[0][0], Corpo[0][1], Corpo[0][2]);
-                  printf("1 [%c] [%c] [%c]\n", Corpo[1][0], Corpo[1][1], Corpo[1][2]);
-                  printf("2 [%c] [%c] [%c]\n", Corpo[2][0], Corpo[2][1], Corpo[2][2]);
+                  printf("\n\x1b[35m<JOGO DA VELHA>\x1b[0m\n");
+                  printf("| [%c] [%c] [%c] |\n",Corpo[0][0], Corpo[0][1], Corpo[0][2]);
+                  printf("| [%c] [%c] [%c] |\n", Corpo[1][0], Corpo[1][1], Corpo[1][2]);
+                  printf("| [%c] [%c] [%c] |\n", Corpo[2][0], Corpo[2][1], Corpo[2][2]);
                   printf("\x1b[1;32mvitoria do jogador: %c\x1b[0m\n", jogador);
                   partida = 0;
                   }
                   else
                      if (Corpo[0][2] == jogador  && Corpo[1][1] == jogador && Corpo[2][0] == jogador ){
-                        printf("   0   1   2\n");
-                        printf("0 [%c] [%c] [%c]\n",Corpo[0][0], Corpo[0][1], Corpo[0][2]);
-                        printf("1 [%c] [%c] [%c]\n", Corpo[1][0], Corpo[1][1], Corpo[1][2]);
-                        printf("2 [%c] [%c] [%c]\n", Corpo[2][0], Corpo[2][1], Corpo[2][2]);
+                        printf("\n\x1b[35m<JOGO DA VELHA>\x1b[0m\n");
+                        printf("| [%c] [%c] [%c] |\n",Corpo[0][0], Corpo[0][1], Corpo[0][2]);
+                        printf("| [%c] [%c] [%c] |\n", Corpo[1][0], Corpo[1][1], Corpo[1][2]);
+                        printf("| [%c] [%c] [%c] |\n", Corpo[2][0], Corpo[2][1], Corpo[2][2]);
                         printf("\x1b[1;32mvitoria do jogador: %c\x1b[0m\n", jogador);
                      partida = 0;
                      }
                      else if (vezes_jogadas == 18 && partida == 1){
-                     printf("   0   1   2\n");
-                     printf("0 [%c] [%c] [%c]\n",Corpo[0][0], Corpo[0][1], Corpo[0][2]);
-                     printf("1 [%c] [%c] [%c]\n", Corpo[1][0], Corpo[1][1], Corpo[1][2]);
-                     printf("2 [%c] [%c] [%c]\n", Corpo[2][0], Corpo[2][1], Corpo[2][2]);
+                     printf("\n\x1b[35m<JOGO DA VELHA>\x1b[0m\n");
+                     printf("| [%c] [%c] [%c] |\n",Corpo[0][0], Corpo[0][1], Corpo[0][2]);
+                     printf("| [%c] [%c] [%c] |\n", Corpo[1][0], Corpo[1][1], Corpo[1][2]);
+                     printf("| [%c] [%c] [%c] |\n", Corpo[2][0], Corpo[2][1], Corpo[2][2]);
                      printf("Empate\n");
                      partida = 0;
                   }
