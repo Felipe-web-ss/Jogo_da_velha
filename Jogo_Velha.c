@@ -7,7 +7,7 @@ void interface(){
        {' ', ' ', ' '}, 
        {' ', ' ', ' '}};
    int partida = 1;
-   char jogador='O'; 
+   char jogador='x'; 
    int vezes_jogadas = 0;
    inicio:
     while(partida == 1){
@@ -16,7 +16,7 @@ void interface(){
       printf("| [%c] [%c] [%c] |\n",Corpo[0][0], Corpo[0][1], Corpo[0][2]);
       printf("| [%c] [%c] [%c] |\n", Corpo[1][0], Corpo[1][1], Corpo[1][2]);
       printf("| [%c] [%c] [%c] |\n", Corpo[2][0], Corpo[2][1], Corpo[2][2]);
-      int vez=0;
+      int vez;
          if(vez == 0){
             if (jogador == 'X'){
           jogador = 'O';}
@@ -69,7 +69,7 @@ void interface(){
                      vez=0;
                      system("cls");}
                      else{
-                        if (jogada > 6 || jogada <7){
+                        if (jogada > 6 || jogada <10){
                         vezes_jogadas--; }
                         vez=1;
                      system("cls");
@@ -152,7 +152,7 @@ void interface(){
         }}}
 int main (){
    int opcao;
-   inicio:
+    while(opcao == 0){
    system("cls");
     printf("\n============================\n");
         printf("       MENU PRINCIPAL       \n");
@@ -164,16 +164,19 @@ int main (){
         scanf("%d", &opcao);
         switch(opcao){
          case 1:
+             opcao =1;
             interface();
             break;
          case 2:
+             opcao =1;
           printf("\n\x1bsaindo...\x1b[0m");
           system("pause");
           default:
+              opcao =0;
           printf("\n\x1b[1;31minvalido!!\x1b[0m\n");
           system("pause");
-          goto inicio;
         }
+    }
         
 
    return 0;
