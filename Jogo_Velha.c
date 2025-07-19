@@ -171,6 +171,7 @@ int main (){
              opcao =1;
           printf("\n\x1bsaindo...\x1b[0m");
           system("pause");
+            break;
           default:
               opcao =0;
           printf("\n\x1b[1;31minvalido!!\x1b[0m\n");
