@@ -17,7 +17,6 @@ void interface(){
       printf("| [%c] [%c] [%c] |\n", Corpo[1][0], Corpo[1][1], Corpo[1][2]);
       printf("| [%c] [%c] [%c] |\n", Corpo[2][0], Corpo[2][1], Corpo[2][2]);
       int vez;
-      printf("%d", vez);
          if(vez == 0){
             if (jogador == 'X'){
           jogador = 'O';}
@@ -31,7 +30,6 @@ void interface(){
                 case 1:
                 case 2:
                 case 3:
-                printf("%d", vez);
                      if (Corpo[0][jogada - 1] == VAZIO){
                      Corpo[0][jogada - 1] = jogador;
                      if (jogada > 0 || jogada <4){
@@ -127,7 +125,6 @@ void interface(){
                      printf("| [%c] [%c] [%c] |\n", Corpo[1][0], Corpo[1][1], Corpo[1][2]);
                      printf("| [%c] [%c] [%c] |\n", Corpo[2][0], Corpo[2][1], Corpo[2][2]);
                      printf("Empate\n");
-                     printf("%d aqui", vezes_jogadas);
                      partida = 0;
                   }
             int novo_jogo;
