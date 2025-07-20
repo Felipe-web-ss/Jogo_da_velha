@@ -7,16 +7,17 @@ void interface(){
        {' ', ' ', ' '}, 
        {' ', ' ', ' '}};
    int partida = 1;
-   char jogador='x'; 
+   char jogador='X'; 
    int vezes_jogadas = 0;
-   inicio:
     while(partida == 1){
        int jogada;
+       inicio:
       printf("\n\x1b[35m<JOGO DA VELHA>\x1b[0m\n");
       printf("| [%c] [%c] [%c] |\n",Corpo[0][0], Corpo[0][1], Corpo[0][2]);
       printf("| [%c] [%c] [%c] |\n", Corpo[1][0], Corpo[1][1], Corpo[1][2]);
       printf("| [%c] [%c] [%c] |\n", Corpo[2][0], Corpo[2][1], Corpo[2][2]);
       int vez;
+      printf("%d", vez);
          if(vez == 0){
             if (jogador == 'X'){
           jogador = 'O';}
@@ -25,24 +26,25 @@ void interface(){
 
              printf("Escolha uma casa Jogador %c: ", jogador);
              scanf("%d", &jogada);
-            vezes_jogadas++;
+
              switch(jogada){
                 case 1:
                 case 2:
                 case 3:
+                printf("%d", vez);
                      if (Corpo[0][jogada - 1] == VAZIO){
                      Corpo[0][jogada - 1] = jogador;
                      if (jogada > 0 || jogada <4){
-                     vezes_jogadas++; }
+                     vezes_jogadas++; 
                      vez=0;
                      system("cls");}
                      else{
-                        vez=1;
                         if (jogada > 0 || jogada <4){
+                             vez=1;
                         vezes_jogadas--; }
                      system("cls");
                      printf("casa invalida\n");
-                       }
+                       }}
                 break;
                 case 4:
                 case 5:
@@ -50,22 +52,23 @@ void interface(){
                      if (Corpo[1][jogada -4] == VAZIO){
                      Corpo[1][jogada -4] = jogador;
                      if (jogada > 3 || jogada <7){
-                     vezes_jogadas++; }
+                     vezes_jogadas++; 
+                     vez =0;
                      system("cls");}
                      else{
-                     vez=0;
                      if (jogada > 3 || jogada <7){
+                         vez=1;
                      vezes_jogadas--; }
                      system("cls");
-                     printf("casa invalida\n");}
+                     printf("casa invalida\n");}}
                 break;
                 case 7:
                 case 8:
                 case 9:
                      if (Corpo[2][jogada-7] == VAZIO){
                      Corpo[2][jogada -7] = jogador; 
-                     if (jogada > 6 || jogada <10){
-                     vezes_jogadas++; }
+                     if (jogada > 6 || jogada < 10){
+                     vezes_jogadas++; 
                      vez=0;
                      system("cls");}
                      else{
@@ -73,12 +76,13 @@ void interface(){
                         vezes_jogadas--; }
                         vez=1;
                      system("cls");
-                     printf("casa invalida\n");}
+                     printf("casa invalida\n");}}
                 break;
                 default:
                    system("cls");
                    printf("\033[1;33mJogada fora do intervalo (1-9).\033[0m\n");
-                vez = 1;
+                   jogada = 0;
+
                 break;
         } for(int validador=0; validador<3; validador++ ){
       if (Corpo[validador][0] == jogador && Corpo[validador][1]==jogador && Corpo[validador][2]== jogador ){
@@ -123,6 +127,7 @@ void interface(){
                      printf("| [%c] [%c] [%c] |\n", Corpo[1][0], Corpo[1][1], Corpo[1][2]);
                      printf("| [%c] [%c] [%c] |\n", Corpo[2][0], Corpo[2][1], Corpo[2][2]);
                      printf("Empate\n");
+                     printf("%d aqui", vezes_jogadas);
                      partida = 0;
                   }
             int novo_jogo;
@@ -151,10 +156,12 @@ void interface(){
                }
         }}}
 int main (){
-   int opcao;
-    while(opcao == 0){
+   int opcao =0;
    system("cls");
-    printf("\n============================\n");
+   while (opcao == 0){
+       opcao++;
+   
+      printf("\n============================\n");
         printf("       MENU PRINCIPAL       \n");
         printf("============================\n");
         printf("1. Iniciar Novo Jogo\n");
@@ -162,23 +169,25 @@ int main (){
         printf("----------------------------\n");
         printf("Digite sua escolha: ");
         scanf("%d", &opcao);
+      
+
         switch(opcao){
          case 1:
-             opcao =1;
+            opcao =1;
             interface();
             break;
          case 2:
-             opcao =1;
+            opcao =1;
           printf("\n\x1bsaindo...\x1b[0m");
           system("pause");
-            break;
+          break;
           default:
-              opcao =0;
+           opcao = 0;
           printf("\n\x1b[1;31minvalido!!\x1b[0m\n");
           system("pause");
         }
-    }
-        
+      }
 
    return 0;
 }
+
