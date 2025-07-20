@@ -10,7 +10,7 @@ void interface(){
    char jogador='X'; 
    int vezes_jogadas = 0;
     while(partida == 1){
-       int jogada;
+       int  jogada;
        inicio:
       printf("\n\x1b[35m<JOGO DA VELHA>\x1b[0m\n");
       printf("| [%c] [%c] [%c] |\n",Corpo[0][0], Corpo[0][1], Corpo[0][2]);
@@ -21,8 +21,7 @@ void interface(){
             if (jogador == 'X'){
           jogador = 'O';}
           else{
-             jogador = 'X';};}
-
+             jogador = 'X';};} 
              printf("Escolha uma casa Jogador %c: ", jogador);
              scanf("%d", &jogada);
 
@@ -153,9 +152,10 @@ void interface(){
                }
         }}}
 int main (){
-   int opcao =0;
+   char opcao ='0';
    system("cls");
-   while (opcao == 0){
+
+   while (opcao == '0'){
        opcao++;
    
       printf("\n============================\n");
@@ -165,26 +165,25 @@ int main (){
         printf("2. Sair do Programa\n");
         printf("----------------------------\n");
         printf("Digite sua escolha: ");
-        scanf("%d", &opcao);
+        scanf("%c", &opcao);
       
-
-        switch(opcao){
-         case 1:
-            opcao =1;
-            interface();
-            break;
-         case 2:
-            opcao =1;
+            
+       
+         if(opcao == '1'){
+            opcao = '1';
+            system ("cls");
+            interface();}
+          else if(opcao =='2'){
+            opcao ='1';
+            system("cls");
           printf("\n\x1bsaindo...\x1b[0m");
-          system("pause");
-          break;
-          default:
-           opcao = 0;
-          printf("\n\x1b[1;31minvalido!!\x1b[0m\n");
-          system("pause");
-        }
+          system("pause");}
+           else{
+            opcao ='0';
+            system("cls");
+            printf("\x1b[1;31mEscolha uma opcao valida!!\x1b[0m");
+          
+        }}
+         return 0;
+
       }
-
-   return 0;
-}
-
